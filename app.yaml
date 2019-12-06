@@ -1,0 +1,7 @@
+runtime: python37
+entrypoint: gunicorn -b :8080 main:app
+handlers:
+  - url: /static
+    static_dir: static
+  - url: /.*
+    script: auto
